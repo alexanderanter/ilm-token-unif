@@ -1,5 +1,7 @@
 const Proxy = artifacts.require('./Proxy.sol');
 const Controller = artifacts.require('./Controller.sol');
+
+//// [review] Recommendation: use .should.be.rejectedWith('revert'); instead
 const { assertRevert } = require('./helpers/assertThrow')
 
 contract('Proxy', (accounts) => {
@@ -16,6 +18,7 @@ contract('Proxy', (accounts) => {
   it('should be initializable through proxy', async () => {
     // initialize contract
     await token.initialize(controller.address, 400000000);
+
     // check total supply
     let totalSupply = await token.totalSupply();
     assert.equal(totalSupply.toNumber(), 0);
@@ -60,6 +63,8 @@ contract('Proxy', (accounts) => {
     assert.equal(totalSupply.toNumber(), 100);
     // deploy new controller
     let newController = await Controller.new();
+
+    //// [review] No test: call by the non-owner 
     await proxy.transferDelegation(newController.address);
     // check wiring
     let delegation = await proxy.delegation();
@@ -88,6 +93,7 @@ contract('Proxy', (accounts) => {
     const other = accounts[2];
     const owner = await token.owner.call();
     assert.isTrue(owner !== other);
+
     return assertRevert(async () => {
         await token.transferOwnership(other, { from: other });
     });
@@ -105,6 +111,9 @@ contract('Proxy', (accounts) => {
   it('should allow to read string', async function () {
     // initialize contract
     await token.initialize(controller.address, 200);
+    //// [review] test not passing...
     assert.equal(await token.name(), 'ICO Malta');
   });
+
+  //// [review] No tests for minting over the cap
 });

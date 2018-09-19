@@ -1,3 +1,4 @@
+//// [review] Please upgrade to the last version (0.4.25)
 pragma solidity ^0.4.23;
 
 import "./DelegateProxy.sol";
@@ -12,7 +13,10 @@ contract Proxy is Delegatable, DelegateProxy {
   /**
    * @dev Function to invoke all function that are implemented in controler
    */
+  //// [review] Warning - this function is not 'payable'. Check this one for 'payable' implementation:
+  //// [reivew] https://github.com/aragon/aragonOS/blob/dev/contracts/common/DepositableDelegateProxy.sol
   function () public {
+    //// [review] Warning - not checking if 'delegation' is not ZERO!
     delegatedFwd(delegation, msg.data);
   }
 

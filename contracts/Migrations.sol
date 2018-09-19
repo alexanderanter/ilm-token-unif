@@ -1,3 +1,4 @@
+//// [review] Please upgrade to the last version (0.4.25)
 pragma solidity ^0.4.18;
 
 contract Migrations {
@@ -8,6 +9,7 @@ contract Migrations {
     if (msg.sender == owner) _;
   }
 
+  //// [review] error - Constructor keyword not available before 0.4.22 (^0.4.18)
   constructor() public {
     owner = msg.sender;
   }

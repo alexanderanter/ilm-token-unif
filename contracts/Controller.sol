@@ -1,13 +1,17 @@
-
+//// [review] Please upgrade to the last version (0.4.25)
 pragma solidity ^0.4.23;
 
+//// [review] no need in StandardToken.sol
 import "zeppelin-solidity/contracts/token/ERC20/StandardToken.sol";
 import "zeppelin-solidity/contracts/token/ERC20/MintableToken.sol";
 import "zeppelin-solidity/contracts/token/ERC20/PausableToken.sol";
 
+//// [review] Consider using "zeppelin-solidity/contracts/token/ERC20/Capped.sol"
 contract Controller is MintableToken, PausableToken {
   address public thisAddr; // matches delegation slot in proxy
   uint256 public cap;      // the max cap of this token
+
+  //// [review] Use zeppelin-solidity/contracts/token/ERC20/DetailedERC20.sol
   string public constant name = "COIN"; // solium-disable-line uppercase
   string public constant symbol = "COIN"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
@@ -37,3 +41,4 @@ contract Controller is MintableToken, PausableToken {
     return super.mint(_to, _amount);
   }
 }
+

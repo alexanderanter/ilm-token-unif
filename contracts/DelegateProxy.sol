@@ -1,14 +1,12 @@
-//// [review] Please upgrade to the last version (0.4.25)
-pragma solidity ^0.4.18;
+pragma solidity 0.4.24;
 
 
-//// [review] Seems like it is a copy-paste of the https://github.com/aragon/aragonOS/blob/dev/contracts/common/DelegateProxy.sol 
-//// [review] With slight difference: 
-//// [review] uint256 constant public FWD_GAS_LIMIT = 10000;
 contract DelegateProxy {
 
+    constructor() public {}
+
     /**
-    * @dev Performs a delegatecall and returns whatever the delegatecall returned (entire context execution will return!)
+    * @dev Performs a delegatecall and returns whatever is returned (entire context execution will return!)
     * @param _dst Destination address to perform the delegatecall
     * @param _calldata Calldata for the delegatecall
     */

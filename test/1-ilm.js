@@ -1,5 +1,5 @@
-const Proxy = artifacts.require('./Proxy.sol');
-const Controller = artifacts.require('./Controller.sol');
+const Proxy = artifacts.require('Proxy');
+const Controller = artifacts.require('Controller');
 //const Controller2 = artifacts.require('./Controller2.sol');
 
 //Use Chai.should for assertion

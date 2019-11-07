@@ -1,8 +1,8 @@
-const Proxy = artifacts.require('./Proxy.sol');
-const Controller = artifacts.require('./Controller.sol');
+const Proxy = artifacts.require('Proxy');
+const Controller = artifacts.require('Controller');
 
 const decimals = 18;
-const initCap = 10000000000000;
+const initCap = (2**256-1)/10**decimals; //max => (2**256-1)/10**decimals
 
 module.exports = async function(deployer) {
     // deploy proxy

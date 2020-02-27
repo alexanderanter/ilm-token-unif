@@ -20,7 +20,7 @@ module.exports = {
 		},
 		mainnet: {
 			provider: process.env.MAINNET_PRIV ? new PrivateKeyProvider(process.env.MAINNET_PRIV, "https://mainnet.infura.io/") : "",
-			gasPrice: 20000000000, // 20 gwei
+			gasPrice: 2000000000, // 2 gwei
 			network_id: "*"
 		},
 		coverage: {

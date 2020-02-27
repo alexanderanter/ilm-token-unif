@@ -18,7 +18,7 @@ const symbol2 = "COIN2";
 const decimals2 = 16;
 const initCap2 = 500000000;
 
-contract('Proxy', (accounts) => {
+contract('LILM', (accounts) => {
     let proxy;
     let token;
     let controller;
@@ -29,7 +29,7 @@ contract('Proxy', (accounts) => {
         token = Controller.at(proxy.address);
     });
 
-    describe('TILM - ILM core token tests', function () {
+    describe('LILM - ILM core token tests', function () {
       it('should be initializable through proxy', async () => {
         // initialize contract
         await token.initialize(controller.address, initCap);
@@ -245,7 +245,7 @@ contract('Proxy', (accounts) => {
             await token.setAuthorized(accounts[1], true, { from: accounts[1] }).should.be.rejectedWith('revert');
             // add authorized by owner
             await token.setAuthorized(accounts[1], true);
-            authorized = await token.authorized(accounts[1]);
+            let authorized = await token.authorized(accounts[1]);
             assert.equal(authorized, true);
             // try to add again to same address should be rejected
             await token.setAuthorized(accounts[1], true).should.be.rejectedWith('revert');
@@ -304,7 +304,7 @@ contract('Proxy', (accounts) => {
             // and to send back shouldn't work
             await token.transfer(accounts[0], 100, { from: accounts[1] });
             // validate balance
-            balance = await token.balanceOf(accounts[0]);
+            let balance = await token.balanceOf(accounts[0]);
             assert.equal(balance.toNumber(), 100);
         });
 
@@ -328,7 +328,7 @@ contract('Proxy', (accounts) => {
             // and since accounts[1] is authorized, to send back should work too
             token.transfer(accounts[0], 100, { from: accounts[1] })
             // validate balance
-            balance = await token.balanceOf(accounts[0]);
+            let balance = await token.balanceOf(accounts[0]);
             assert.equal(balance.toNumber(), 100);
         });
 

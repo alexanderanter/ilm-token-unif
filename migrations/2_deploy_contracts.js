@@ -5,7 +5,8 @@ const decimals = 18;
 const initCap = (2**256-1)/10**decimals; //max => (2**256-1)/10**decimals
 
 module.exports = async function(deployer) {
-    // deploy proxy
+	/*    
+	// deploy proxy
     await deployer.deploy(Proxy);
     const proxy = await Proxy.deployed();
     // deploy controller
@@ -18,4 +19,5 @@ module.exports = async function(deployer) {
     // check result
     let cap = await token.cap();
     console.log(cap.toNumber());
+	*/
 };

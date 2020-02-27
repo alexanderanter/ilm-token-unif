@@ -12,17 +12,17 @@
     "babel-preset-stage-2": "^6.18.0",
     "babel-preset-stage-3": "^6.17.0",
     "babel-register": "^6.23.0",
-    "truffle-privatekey-provider": "0.0.6",
+    "chai": "4.2.0",
+    "chai-as-promised": "7.1.1",
     "dotenv": "^5.0.1",
     "ganache-cli": "^6.0.3",
-    "solium": "^1.1.2",
-    "truffle": "4.1.14",
     "solidity-coverage": "0.5.11",
-    "chai": "4.2.0",
-    "chai-as-promised": "7.1.1"
+    "solium": "^1.1.2",
+    "truffle-privatekey-provider": "0.0.6"
   },
   "dependencies": {
     "bignumber.js": "^4.0.1",
-    "openzeppelin-solidity": "^1.6.0"
+    "openzeppelin-solidity": "^1.6.0",
+    "truffle": "^4.1.14"
   }
 }

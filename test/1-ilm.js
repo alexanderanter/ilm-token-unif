@@ -8,8 +8,8 @@ const chaiAsPromised = require('chai-as-promised');
 const should = chai.should();
 chai.use(chaiAsPromised);
 
-const name = "COIN";
-const symbol = "COIN";
+const name = "TokenName";
+const symbol = "TSYM";
 const decimals = 18;
 const initCap = 400000000;
 
@@ -18,7 +18,7 @@ const symbol2 = "COIN2";
 const decimals2 = 16;
 const initCap2 = 500000000;
 
-contract('Proxy', (accounts) => {
+contract('ILM', (accounts) => {
   let proxy;
   let token;
   let controller;

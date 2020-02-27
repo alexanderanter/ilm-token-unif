@@ -21,7 +21,7 @@ const symbol2 = "COIN2";
 const decimals2 = 16;
 const initCap2 = 500000000;
 
-contract('Proxy', (accounts) => {
+contract('TILM', (accounts) => {
     let proxy;
     let token;
     let controller;

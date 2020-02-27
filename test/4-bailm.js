@@ -18,7 +18,7 @@ const symbol2 = "BAILM2";
 const decimals2 = 16;
 const initCap2 = 500000000;
 
-contract('Proxy', (accounts) => {
+contract('BAILM', (accounts) => {
     let proxy;
     let token;
     let controller;

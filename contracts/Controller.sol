@@ -9,8 +9,8 @@ contract Controller is MintableToken, PausableToken, BurnableToken {
     address public thisAddr; // matches delegation slot in proxy
     uint256 public cap;      // the max cap of this token
 
-    string public constant name = "TokenName"; // solium-disable-line uppercase
-    string public constant symbol = "TSYM"; // solium-disable-line uppercase
+    string public constant name = "Wheeeei"; // solium-disable-line uppercase
+    string public constant symbol = "Wheeeei"; // solium-disable-line uppercase
     uint8 public constant decimals = 18; // solium-disable-line uppercase
 
     constructor() public {}

@@ -2,10 +2,10 @@ const Proxy = artifacts.require('Proxy');
 const Controller = artifacts.require('Controller');
 
 const decimals = 18;
-const initCap = (2**256-1)/10**decimals; //max => (2**256-1)/10**decimals
+const initCap = 1000; //max => (2**256-1)/10**decimals TOTAL SUPPLY;
 
 module.exports = async function(deployer) {
-	/*    
+
 	// deploy proxy
     await deployer.deploy(Proxy);
     const proxy = await Proxy.deployed();
@@ -19,5 +19,5 @@ module.exports = async function(deployer) {
     // check result
     let cap = await token.cap();
     console.log(cap.toNumber());
-	*/
+
 };
